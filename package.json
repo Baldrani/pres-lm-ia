@@ -1,23 +1,29 @@
 {
-  "name": "pres-lm-ia",
-  "version": "1.0.0",
-  "description": "A tiny presentation to showcase the usage of AI in our beautiful world",
-  "main": "app.js",
-  "scripts": {
-    "test": "npm run test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/Baldrani/pres-lm-ia.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Baldrani/pres-lm-ia/issues"
-  },
-  "homepage": "https://github.com/Baldrani/pres-lm-ia#readme",
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "jsdom": "^25.0.0"
-  }
+    "name": "pres-lm-ia",
+    "version": "1.0.0",
+    "description": "A tiny presentation to showcase the usage of AI in our beautiful world",
+    "main": "app.js",
+    "type": "module",
+    "scripts": {
+        "start": "node server.js",
+        "test": "npm run test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/Baldrani/pres-lm-ia.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Baldrani/pres-lm-ia/issues"
+    },
+    "homepage": "https://github.com/Baldrani/pres-lm-ia#readme",
+    "devDependencies": {
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "jsdom": "^25.0.0"
+    },
+    "dependencies": {
+        "express": "^4.19.2"
+    }
 }
