@@ -8,3 +8,49 @@ canvas {
   background: #fff;
 }
 
+.futuristic-number {
+  font-size: 120px;
+  font-weight: bold;
+  color: #00e6e6;
+  text-shadow: 
+      0 0 10px #00e6e6, 
+      0 0 20px #00e6e6, 
+      0 0 30px #00e6e6, 
+      0 0 40px #00ffff, 
+      0 0 70px #00ffff, 
+      0 0 80px #00ffff, 
+      0 0 100px #00ffff, 
+      0 0 150px #00ffff;
+  position: relative;
+  animation: flicker 1.5s infinite alternate;
+}
+
+/* Neon Glow Animation */
+@keyframes flicker {
+  0%, 100% {
+      opacity: 1;
+      text-shadow: 
+          0 0 10px #00e6e6, 
+          0 0 20px #00e6e6, 
+          0 0 30px #00e6e6, 
+          0 0 40px #00ffff, 
+          0 0 70px #00ffff, 
+          0 0 80px #00ffff, 
+          0 0 100px #00ffff, 
+          0 0 150px #00ffff;
+  }
+  50% {
+      opacity: 0.6;
+      text-shadow: 
+          0 0 5px #00e6e6, 
+          0 0 10px #00e6e6, 
+          0 0 15px #00e6e6, 
+          0 0 20px #00ffff, 
+          0 0 35px #00ffff, 
+          0 0 40px #00ffff, 
+          0 0 50px #00ffff, 
+          0 0 75px #00ffff;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');

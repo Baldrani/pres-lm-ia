@@ -206,6 +206,8 @@ export function gameLoop() {
 
 // Event handler for keydown events
 function keyDownHandler(e) {
+    console.log(e.key);
+    console.log(currentSlideIndex);
     if (e.key === "ArrowRight" || e.key === "d") {
         player.dx = 1;
         player.direction = "right";
@@ -219,6 +221,7 @@ function keyDownHandler(e) {
     } else if (e.key === "p" || e.key === "P") {
         player.isVisible = true; // Make the player visible
     } else if (e.key === " " && visibleLines[currentSlideIndex] < slides[currentSlideIndex].length) {
+        console.log(currentSlideIndex);
         // Show the next line of text if space is pressed
         visibleLines[currentSlideIndex]++;
     }
