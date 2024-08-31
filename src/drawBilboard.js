@@ -81,50 +81,60 @@ function drawGround() {
 export function drawBillboards() {
     slides.forEach((slide, index) => {
         let textX = SCREEN_WIDTH * index + SCREEN_WIDTH / 2;
-        let headerY = 50; // Y-position for headers
 
-        // Draw header
-        ctx.fillStyle = "#3ad4a7"; // Header color
-        ctx.font = "30px Arial";
-        ctx.fillText(slide[0], textX - scrollOffset - ctx.measureText(slide[0]).width / 2, headerY);
+        slide.forEach((item, itemIndex) => {
+            const { content, position = { x: textX - scrollOffset - ctx.measureText(content).width / 2, y: 0 } } = item;
+            let { x, y } = position; // Get the x and y position
 
-        // Draw only the visible text lines or images below the header with fade-in effect
-        ctx.font = "20px Arial";
-        slide.slice(1).forEach((line, lineIndex) => {
-            if (lineIndex < visibleLines[index] - 1) {
-                // Ensure the line is supposed to be visible
-                if (fadeAmounts[index][lineIndex + 1] < 1) {
-                    fadeAmounts[index][lineIndex + 1] += 0.02; // Increment fade-in amount
-                }
+            // If position x is not set, fallback to default centering
+            if (x === undefined) {
+                x = textX - scrollOffset - ctx.measureText(content).width / 2;
+            } else {
+                x = x + textX - SCREEN_WIDTH / 2 - scrollOffset; // Adjust for slide positioning
+            }
 
-                // Check if the text is a URL ending in jpg, png, or webp
-                if (line.match(/\.(jpg|png|webp)$/)) {
-                    let img = new Image();
-                    img.src = line;
-                    img.onload = function () {
-                        let scale = Math.min(600 / img.width, 600 / img.height); // Scale to fit within 600px max
-                        let imgWidth = img.width * scale;
-                        let imgHeight = img.height * scale;
-                        const imgX = textX - scrollOffset - imgWidth / 2;
-                        const imgY = headerY + 40 + lineIndex * 100; // Adjust Y position for image
+            if (itemIndex === 0) {
+                // Draw header
+                ctx.fillStyle = "#3ad4a7"; // Header color
+                ctx.font = "30px Arial";
+                ctx.fillText(content, x, y);
+            } else {
+                // Draw only the visible text lines or images below the header with fade-in effect
+                ctx.font = "20px Arial";
+                if (itemIndex < visibleLines[index]) {
+                    // Ensure the line is supposed to be visible
+                    if (fadeAmounts[index][itemIndex] < 1) {
+                        fadeAmounts[index][itemIndex] += 0.02; // Increment fade-in amount
+                    }
 
-                        // Set alpha directly in drawImage fill style
-                        //ctx.fillStyle = `rgba(255, 255, 255, ${fadeAmounts[index][lineIndex + 1]})`;
-                        ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
-                    };
-                    img.onerror = function () {
-                        console.error("Failed to load image at " + line);
-                    };
-                } else {
-                    ctx.fillStyle = `rgba(0, 0, 0, ${fadeAmounts[index][lineIndex + 1]})`; // Set color with alpha for fade-in
-                    const lineY = headerY + 40 + lineIndex * 30; // Calculate y-position for each line of text
-                    ctx.fillText(line, textX - scrollOffset - ctx.measureText(line).width / 2, lineY);
+                    // Check if the content is a URL ending in jpg, png, or webp
+                    if (content?.match(/\.(jpg|png|webp)$/)) {
+                        let img = new Image();
+                        img.src = content;
+                        img.onload = function () {
+                            let scale = Math.min(600 / img.width, 600 / img.height); // Scale to fit within 600px max
+                            let imgWidth = img.width * scale;
+                            let imgHeight = img.height * scale;
+                            const imgX = x - imgWidth / 2;
+                            const imgY = y; // Use specified Y position for the image
+
+                            // Draw the image with the fade amount as alpha
+                            ctx.globalAlpha = fadeAmounts[index][itemIndex];
+                            ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
+                            ctx.globalAlpha = 1; // Reset alpha
+                        };
+                        img.onerror = function () {
+                            console.error("Failed to load image at " + content);
+                        };
+                    } else {
+                        ctx.fillStyle = `rgba(0, 0, 0, ${fadeAmounts[index][itemIndex]})`; // Set color with alpha for fade-in
+                        ctx.fillText(content, x, y); // Use specified X and Y positions for text
+                    }
                 }
             }
         });
     });
 }
-
 function isPlayerMovingOutOfBounds() {
     return player.x < SCREEN_WIDTH / 3 && player.dx < 0 && scrollOffset <= 0;
 }
@@ -215,8 +225,6 @@ export function gameLoop() {
 
 // Event handler for keydown events
 function keyDownHandler(e) {
-    console.log(e.key);
-    console.log(currentSlideIndex);
     if (e.key === "ArrowRight" || e.key === "d") {
         player.dx = 1;
         player.direction = "right";
@@ -230,7 +238,6 @@ function keyDownHandler(e) {
     } else if (e.key === "p" || e.key === "P") {
         player.isVisible = true; // Make the player visible
     } else if (e.key === " " && visibleLines[currentSlideIndex] < slides[currentSlideIndex].length) {
-        console.log(currentSlideIndex);
         // Show the next line of text if space is pressed
         visibleLines[currentSlideIndex]++;
     }
