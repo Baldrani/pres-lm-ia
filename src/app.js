@@ -1,5 +1,3 @@
-import { drawBillboards } from "./slides/drawBilboard";
+import { gameLoop } from "./drawBilboard.js";
 
-console.log("Bonjour");
-
-drawBillboards();
+gameLoop();

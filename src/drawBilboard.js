@@ -1,4 +1,4 @@
-import slides from "./slides";
+import slides from "./slides/index.js";
 
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
@@ -40,6 +40,8 @@ let player = {
     isVisible: false, // Player is not visible until 'P' is pressed
     moving: false, // Check if the player is moving left or right
 };
+
+// const slides = [];
 
 let scrollOffset = 0;
 let isShiftPressed = false;
@@ -192,7 +194,7 @@ function clearCanvas() {
 }
 
 // Game loop function
-function gameLoop() {
+export function gameLoop() {
     clearCanvas();
     drawGround();
     drawBillboards();
@@ -235,6 +237,3 @@ function keyUpHandler(e) {
 // Add event listeners for keydown and keyup events
 document.addEventListener("keydown", keyDownHandler);
 document.addEventListener("keyup", keyUpHandler);
-
-// Start the game loop
-gameLoop();
