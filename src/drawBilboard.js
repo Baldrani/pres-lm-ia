@@ -41,13 +41,19 @@ let player = {
     moving: false, // Check if the player is moving left or right
 };
 
-// const slides = [];
-
 let scrollOffset = 0;
 let isShiftPressed = false;
 let currentSlideIndex = 0; // Track current slide index
 let visibleLines = slides.map(() => 1); // Track the number of visible lines for each slide
 let fadeAmounts = slides.map(slide => slide.map(() => 0)); // Initialize all fade amounts to 0 for each line
+
+// Function to update the slide number in the div
+const updateSlideNumber = () => {
+    const slideNumberDiv = document.getElementById("slide-number");
+    if (slideNumberDiv && currentSlideIndex >= 0 && currentSlideIndex < slides.length) {
+        slideNumberDiv.textContent = currentSlideIndex + 1;
+    }
+};
 
 // Function to draw the player
 export function drawPlayer() {
@@ -186,6 +192,9 @@ function updatePlayerPosition() {
 
     // Update current slide index based on scroll position
     currentSlideIndex = Math.floor(scrollOffset / SCREEN_WIDTH);
+
+    // Update the slide number in the div
+    updateSlideNumber();
 }
 
 // Function to clear canvas
