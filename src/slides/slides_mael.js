@@ -1,6 +1,11 @@
 const slides = [
-    ["Header 3", "text 3 text 3 text 3 text 3", "text 3 text 3 text 3 text 3"],
-    ["Header 4", "text 4 text 4 text 4 text 4", "text 4 text 4 text 4 text 4", "text 4 text 4 text 4 text 4"],
+    [
+        { content: "Header 3", position: { x: 100, y: 50 } },
+        { content: "text 3 text 3 text 3 text 3", position: { x: 100, y: 100 } },
+    ],
+    [
+        { content: "Header 4", position: { x: 200, y: 50 } },
+        { content: "text 4 text 4 text 4 text 4", position: { x: 200, y: 100 } },
+    ],
 ];
-
 export default slides;
