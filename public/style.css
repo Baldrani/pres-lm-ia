@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  background: #fff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+.futuristic-number {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: #004d4d; /* Darker color */
+  background: linear-gradient(
+    90deg,
+    #004d4d,
+    #008080,
+    #004d4d
+  ); /* Darker gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 10px rgba(0, 77, 77, 0.7),
+    0 0 20px rgba(0, 77, 77, 0.5),
+    0 0 30px rgba(0, 77, 77, 0.3),
+    0 0 40px rgba(0, 128, 128, 0.2),
+    0 0 70px rgba(0, 128, 128, 0.1),
+    0 0 80px rgba(0, 128, 128, 0.05),
+    0 0 100px rgba(0, 128, 128, 0.03),
+    0 0 150px rgba(0, 128, 128, 0.01);
+  animation:
+    flicker 1.5s infinite alternate,
+    gradientShift 3s infinite linear;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 1.5rem;
+}
+
+/* Neon Glow Animation */
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px rgba(0, 77, 77, 0.7),
+      0 0 20px rgba(0, 77, 77, 0.5),
+      0 0 30px rgba(0, 77, 77, 0.3),
+      0 0 40px rgba(0, 128, 128, 0.2),
+      0 0 70px rgba(0, 128, 128, 0.1),
+      0 0 80px rgba(0, 128, 128, 0.05),
+      0 0 100px rgba(0, 128, 128, 0.03),
+      0 0 150px rgba(0, 128, 128, 0.01);
+  }
+  50% {
+    opacity: 0.6;
+    text-shadow:
+      0 0 5px rgba(0, 77, 77, 0.7),
+      0 0 10px rgba(0, 77, 77, 0.5),
+      0 0 15px rgba(0, 77, 77, 0.3),
+      0 0 20px rgba(0, 128, 128, 0.2),
+      0 0 35px rgba(0, 128, 128, 0.1);
+  }
+}
+
+/* Gradient Shift Animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
