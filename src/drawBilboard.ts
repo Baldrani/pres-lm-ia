@@ -118,16 +118,27 @@ function drawImage(
   fadeAmount: number,
 ): void {
   const img: HTMLImageElement = getImage(content);
-  img.onload = function () {
-    const scale: number = Math.min(600 / img.width, 600 / img.height);
-    const imgWidth: number = img.width * scale;
-    const imgHeight: number = img.height * scale;
-    const imgX: number = x - imgWidth / 2;
-    const imgY: number = y;
+  console.log(img);
+  if (!img.complete) {
+    img.onload = () => {
+      const scale: number = Math.min(600 / img.width, 600 / img.height);
+      const imgWidth: number = img.width * scale;
+      const imgHeight: number = img.height * scale;
+      const imgX: number = x - imgWidth / 2;
+      const imgY: number = y;
+      ctx.globalAlpha = fadeAmount;
+      ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
+      ctx.globalAlpha = 1.0;
+      console.log(`Image loaded: ${content}`);
+    };
+  } else {
+    console.log(
+      `Drawing image: ${content} at (${x}, ${y}) with alpha ${fadeAmount}`,
+    );
     ctx.globalAlpha = fadeAmount;
-    ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
-    ctx.globalAlpha = 1;
-  };
+    ctx.drawImage(img, x, y);
+    ctx.globalAlpha = 1.0;
+  }
   img.onerror = function () {
     console.error('Failed to load image at ' + content);
   };
@@ -159,11 +170,7 @@ export function drawBillboards(): void {
           if (fadeAmounts[index][itemIndex] < 1) {
             fadeAmounts[index][itemIndex] += 0.02;
           }
-          if (
-            content === null || content === void 0
-              ? void 0
-              : content.match(/\.(jpg|png|webp)$/)
-          ) {
+          if (/\.(jpg|jpeg|png|webp)$/.test(content)) {
             drawImage(content, x, y, fadeAmounts[index][itemIndex]);
           } else {
             ctx.fillStyle = `rgba(0, 0, 0, ${fadeAmounts[index][itemIndex]})`;
