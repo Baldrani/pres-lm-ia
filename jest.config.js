@@ -1,5 +1,5 @@
 export default {
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   preset: 'ts-jest/presets/default-esm',
   transform: {
     '^.+\\.m?[tj]s?$': ['ts-jest', { useESM: true }],
@@ -15,4 +15,5 @@ export default {
     '!src/**/*.d.ts',
     '!src/**/*.d.mts',
   ],
+  setupFilesAfterEnv: ['jest-canvas-mock', './jest.setup.js'],
 };
