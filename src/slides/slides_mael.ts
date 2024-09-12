@@ -5,15 +5,19 @@ const slides: SlideElement[][] = [
     { content: 'Header 3', position: { x: 100, y: 50 } },
     {
       content:
-        // TODO CREATE QR CODE
         'https://www.rtes.fr/system/files/inline-images/image%20de%20test.jpeg',
-      position: { x: 500, y: 100 },
+      position: { x: 500, y: 500 },
+      opacity: 0,
     },
     {
-      content:
-        // TODO CREATE QR CODE
-        'https://i.imgflip.com/92t6n4.jpg',
-      position: { x: 500, y: 100 },
+      content: 'https://i.imgflip.com/92t6n4.jpg',
+      position: { x: 500, y: 500 },
+      opacity: 0,
+    },
+    {
+      content: 'New slide on same slide 🧙‍♂️',
+      position: { x: 500, y: 500 },
+      cleanPreviousSlideItems: true,
     },
   ],
   [

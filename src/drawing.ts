@@ -20,7 +20,7 @@ export const drawImage = (
   fadeAmount: number,
 ): void => {
   const img: HTMLImageElement = getImage(content);
-  img.onload = function () {
+  if (img.complete) {
     const scale: number = Math.min(600 / img.width, 600 / img.height);
     const imgWidth: number = img.width * scale;
     const imgHeight: number = img.height * scale;
@@ -29,10 +29,21 @@ export const drawImage = (
     ctx.globalAlpha = fadeAmount;
     ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
     ctx.globalAlpha = 1;
-  };
-  img.onerror = function () {
-    console.error('Failed to load image at ' + content);
-  };
+  } else {
+    img.onload = function () {
+      const scale: number = Math.min(600 / img.width, 600 / img.height);
+      const imgWidth: number = img.width * scale;
+      const imgHeight: number = img.height * scale;
+      const imgX: number = x - imgWidth / 2;
+      const imgY: number = y;
+      ctx.globalAlpha = fadeAmount;
+      ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
+      ctx.globalAlpha = 1;
+    };
+    img.onerror = function () {
+      console.error('Failed to load image at ' + content);
+    };
+  }
 };
 
 export const drawPlayer = (
@@ -73,12 +84,13 @@ export const drawGround = (
   );
 };
 
+export const HEADER_Y_POSTION = 200;
+
 export const drawBillboards = (
   ctx: CanvasRenderingContext2D,
   scrollOffset: number,
   screenWidth: number,
   visibleLines: number[],
-  fadeAmounts: number[][],
 ): void => {
   slides.forEach((slide, index) => {
     const textX: number = screenWidth * index + screenWidth / 2;
@@ -102,17 +114,21 @@ export const drawBillboards = (
       } else {
         ctx.font = '20px Arial';
         if (itemIndex < visibleLines[index]) {
-          if (fadeAmounts[index][itemIndex] < 1) {
-            fadeAmounts[index][itemIndex] += 0.02;
+          if (item.cleanPreviousSlideItems) {
+            console.log('ici');
+            ctx.clearRect(0, HEADER_Y_POSTION, screenWidth, 30000);
+          }
+          if (item.opacity < 1) {
+            item.opacity += 0.02;
           }
           if (
             content === null || content === void 0
               ? void 0
-              : content.match(/\.(jpg|png|webp)$/)
+              : content.match(/\.(jpeg|jpg|png|webp)$/)
           ) {
-            drawImage(ctx, content, x, y, fadeAmounts[index][itemIndex]);
+            drawImage(ctx, content, x, y, item.opacity);
           } else {
-            ctx.fillStyle = `rgba(0, 0, 0, ${fadeAmounts[index][itemIndex]})`;
+            ctx.fillStyle = `rgba(0, 0, 0, ${item.opacity})`;
             ctx.fillText(content, x, y);
           }
         }
