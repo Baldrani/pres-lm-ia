@@ -1,4 +1,3 @@
-
 # How to use the presentation
 ===========================
 
@@ -20,3 +19,10 @@ On each slide you can reveal each separate text by pressing the `space bar`.
 
 ---
 Based on node-typescript-boilerplate
+
+## Usefull link
+
+### Copilot
+
+- [Copilot Doc](https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide)
+- [Community Discussion](https://github.com/orgs/community/discussions/categories/copilot)
