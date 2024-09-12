@@ -1,0 +1,1 @@
+global.Image = window.Image;
