@@ -13,7 +13,6 @@ const state: State = {
   currentSlideIndex: 0,
 };
 const visibleLines: number[] = slides.map(() => 1);
-const fadeAmounts: number[][] = slides.map((slide) => slide.map(() => 0));
 
 export const updateSlideNumber = (): void => {
   const slideNumberDiv: HTMLElement | null =
@@ -82,7 +81,7 @@ const updatePlayerPosition = (): void => {
 export const gameLoop = (): void => {
   clearCanvas(ctx, SCREEN_WIDTH, SCREEN_HEIGHT);
   drawGround(ctx, scrollOffset, SCREEN_HEIGHT, SCREEN_WIDTH, slides.length);
-  drawBillboards(ctx, scrollOffset, SCREEN_WIDTH, visibleLines, fadeAmounts);
+  drawBillboards(ctx, scrollOffset, SCREEN_WIDTH, visibleLines);
   drawPlayer(ctx, player);
   updatePlayerPosition();
   requestAnimationFrame(gameLoop);
