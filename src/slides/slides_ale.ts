@@ -1,15 +1,32 @@
-import { HEADER_Y_POSITION, TEXT_FIRST_LINE_Y_POSITION, TEXT_SECOND_LINE_Y_POSITION } from '../drawing';
+import { HEADER_Y_POSITION, TEXT_FIFTH_LINE_Y_POSITION, TEXT_FIRST_LINE_Y_POSITION, TEXT_FOURTH_LINE_Y_POSITION, TEXT_SECOND_LINE_Y_POSITION, TEXT_THIRD_LINE_Y_POSITION } from '../drawing';
 import { SlideElement } from '../types/index';
 
 const slides: SlideElement[][] = [
   [{ content: 'Exploring AI with Atlas', position: { x: 100, y: HEADER_Y_POSITION } }],
   [
     { content: '[poll] Have you watched Atlas?', position: { x: 100, y: HEADER_Y_POSITION } },
+      {
+      content:
+        'http://localhost:3000/public/images/atlas_movie.png',
+      position: { x: 500, y: 500 },
+      opacity: 0,
+
+      }
   ],
   [ { content: 'Spoiler alert', position: { x: 100, y: HEADER_Y_POSITION } }, ],
-  [ { content: 'Improving Abilities', position: { x: 100, y: HEADER_Y_POSITION } }, ],
-  [ { content: 'Improving Abilities in the real world', position: { x: 100, y: HEADER_Y_POSITION } }, ],
-  [ { content: 'Improving Abilities in the digital world', position: { x: 100, y: HEADER_Y_POSITION } }, ],
+  [ 
+   { content: 'Super Mario', position: { x: 100, y: HEADER_Y_POSITION } }, 
+   { content: 'const maxRight: number = SCREEN_WIDTH * (slides.length - 1) + SCREEN_WIDTH / 2;', position: { x: 100, y: TEXT_FIRST_LINE_Y_POSITION } }, 
+],
+  [
+    { content: 'Improving Abilities?', position: { x: 100, y: HEADER_Y_POSITION } }, 
+    { content: 'Great for PoC', position: { x: 100, y: TEXT_FIRST_LINE_Y_POSITION } }, 
+    { content: 'Common skills', position: { x: 100, y: TEXT_SECOND_LINE_Y_POSITION } }, 
+    { content: 'Basic problem solving', position: { x: 100, y: TEXT_THIRD_LINE_Y_POSITION } }, 
+    { content: 'Hallucinations', position: { x: 100, y: TEXT_FOURTH_LINE_Y_POSITION } }, 
+    { content: `Can't reason`, position: { x: 100, y: TEXT_FIFTH_LINE_Y_POSITION } }, 
+
+  ],
   [ { content: 'AI assistants', position: { x: 100, y: HEADER_Y_POSITION } }],
   [ { content: '[poll] AI assistants question?????', position: { x: 100, y: HEADER_Y_POSITION } }, ],
   [
