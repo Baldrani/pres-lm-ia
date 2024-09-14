@@ -84,7 +84,9 @@ export const drawGround = (
   );
 };
 
-export const HEADER_Y_POSTION = 200;
+export const HEADER_Y_POSITION = 200;
+export const TEXT_FIRST_LINE_Y_POSITION = 400;
+export const TEXT_SECOND_LINE_Y_POSITION = 450;
 
 export const drawBillboards = (
   ctx: CanvasRenderingContext2D,
@@ -116,7 +118,7 @@ export const drawBillboards = (
         if (itemIndex < visibleLines[index]) {
           if (item.cleanPreviousSlideItems) {
             console.log('ici');
-            ctx.clearRect(0, HEADER_Y_POSTION, screenWidth, 30000);
+            ctx.clearRect(0, HEADER_Y_POSITION, screenWidth, 30000);
           }
           if (item.opacity < 1) {
             item.opacity += 0.02;
