@@ -10,7 +10,7 @@ export interface Player {
   gravity: number;
   groundLevel: number;
   fastSpeed: number;
-  direction: string;
+  direction: 'right' | 'left';
   onGround: boolean;
   isVisible: boolean;
   moving: boolean;
