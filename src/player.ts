@@ -14,6 +14,7 @@ export interface Player {
   onGround: boolean;
   isVisible: boolean;
   moving: boolean;
+  jumping: boolean;
 }
 
 export const playerImages: { [key: string]: HTMLImageElement } = {
@@ -48,4 +49,5 @@ export const createPlayer = (
   onGround: false,
   isVisible: false,
   moving: false,
+  jumping: false,
 });

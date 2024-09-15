@@ -1,12 +1,12 @@
 import {
+  SlideElement,
   HEADER_Y_POSITION,
   TEXT_FIFTH_LINE_Y_POSITION,
   TEXT_FIRST_LINE_Y_POSITION,
   TEXT_FOURTH_LINE_Y_POSITION,
   TEXT_SECOND_LINE_Y_POSITION,
   TEXT_THIRD_LINE_Y_POSITION,
-} from '../drawing';
-import { SlideElement } from '../types/index';
+} from '../types/index';
 
 const slides: SlideElement[][] = [
   [

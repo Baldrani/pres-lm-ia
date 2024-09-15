@@ -24,12 +24,18 @@ export const setupEventHandlers = (
       state.isShiftPressed = true;
     } else if (e.key === 'p' || e.key === 'P') {
       player.isVisible = true;
-    } else if (
-      e.key === ' ' &&
-      visibleLines[state.currentSlideIndex] <
+    } else if (e.key === ' ') {
+      if (player.onGround) {
+        player.dy = -20; // Adjust the jump strength as needed
+        player.jumping = true;
+        player.onGround = false;
+      }
+      if (
+        visibleLines[state.currentSlideIndex] <
         slides[state.currentSlideIndex].length
-    ) {
-      visibleLines[state.currentSlideIndex]++;
+      ) {
+        visibleLines[state.currentSlideIndex]++;
+      }
     }
   };
 
@@ -44,6 +50,8 @@ export const setupEventHandlers = (
       player.moving = false;
     } else if (e.key === 'Shift') {
       state.isShiftPressed = false;
+    } else if (e.key === ' ') {
+      player.jumping = false;
     }
   };
 

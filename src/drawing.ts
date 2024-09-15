@@ -1,5 +1,6 @@
 import { Player, playerImages } from './player';
 import slides from './slides/index';
+import { HEADER_Y_POSITION } from './types';
 
 const imageCache: Map<string, HTMLImageElement> = new Map();
 
@@ -40,8 +41,9 @@ export const drawImage = (
       ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
       ctx.globalAlpha = 1;
     };
-    img.onerror = function () {
+    img.onerror = function (e) {
       console.error('Failed to load image at ' + content);
+      console.error(e);
     };
   }
 };
@@ -84,13 +86,6 @@ export const drawGround = (
   );
 };
 
-export const HEADER_Y_POSITION = 200;
-export const TEXT_FIRST_LINE_Y_POSITION = 400;
-export const TEXT_SECOND_LINE_Y_POSITION = 450;
-export const TEXT_THIRD_LINE_Y_POSITION = 500;
-export const TEXT_FOURTH_LINE_Y_POSITION = 550;
-export const TEXT_FIFTH_LINE_Y_POSITION = 600;
-
 export const drawBillboards = (
   ctx: CanvasRenderingContext2D,
   scrollOffset: number,
@@ -120,11 +115,13 @@ export const drawBillboards = (
         ctx.fillStyle = '#444';
         ctx.font = '20px Arial';
         if (itemIndex < visibleLines[index]) {
+          console.log('Debug time');
           if (item.cleanPreviousSlideItems) {
             console.log('ici');
             ctx.clearRect(0, HEADER_Y_POSITION, screenWidth, 30000);
           }
-          if (item.opacity < 1) {
+          if (item?.opacity < 1) {
+            console.log('Opacity');
             item.opacity += 0.02;
           }
           if (
@@ -132,9 +129,11 @@ export const drawBillboards = (
               ? void 0
               : content.match(/\.(jpeg|jpg|png|webp)$/)
           ) {
-            drawImage(ctx, content, x, y, item.opacity);
+            console.log('Image');
+            drawImage(ctx, content, x, y, item?.opacity || 1);
           } else {
-            ctx.fillStyle = `rgba(0, 0, 0, ${item.opacity})`;
+            console.log('Texte');
+            ctx.fillStyle = `rgba(0, 0, 0, ${item?.opacity || 1})`;
             ctx.fillText(content, x, y);
           }
         }
