@@ -15,5 +15,5 @@ export default {
     '!src/**/*.d.ts',
     '!src/**/*.d.mts',
   ],
-  setupFiles: ['jest-canvas-mock', './jest.setup.js'],
+  setupFiles: ['./jest.setup.js'],
 };
