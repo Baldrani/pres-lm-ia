@@ -34,7 +34,12 @@ const isScrollOffsetNegative = (): boolean => {
   return scrollOffset < 0;
 };
 
-const updatePlayerPosition = (): void => {
+/**
+ * Updates the position of the player character based on the current game state.
+ * This function handles player movement, gravity, and collision detection with the ground.
+ * It also manages the scrolling of the game world based on the player's position.
+ */
+export const updatePlayerPosition = (): void => {
   if (!player.isVisible) return;
   const effectiveSpeed: number = state.isShiftPressed
     ? player.fastSpeed

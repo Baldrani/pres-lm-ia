@@ -41,6 +41,7 @@
   "author": "Jakub Synowiec <jsynowiec@users.noreply.github.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "canvas": "^2.11.2",
     "express": "^4.19.2",
     "tslib": "~2.6"
   },
