@@ -1,4 +1,4 @@
-import { Player } from './player';
+import { Bullet, createBullet, Player } from './player';
 import slides from './slides/index';
 
 export interface State {
@@ -10,6 +10,7 @@ export const setupEventHandlers = (
   player: Player,
   visibleLines: number[],
   state: State,
+  bullets: Bullet[],
 ): void => {
   const keyDownHandler = (e: KeyboardEvent): void => {
     if (e.key === 'ArrowRight' || e.key === 'd') {
@@ -36,6 +37,8 @@ export const setupEventHandlers = (
       ) {
         visibleLines[state.currentSlideIndex]++;
       }
+    } else if (e.key === 'f' || e.key === 'F') {
+      bullets.push(createBullet(player));
     }
   };
 

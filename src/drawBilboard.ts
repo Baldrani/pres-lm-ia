@@ -1,13 +1,15 @@
 import slides from './slides/index';
 import { setupCanvas } from './canvas';
-import { createPlayer } from './player';
+import { Bullet, createPlayer } from './player';
 import { drawPlayer, drawGround, drawBillboards, clearCanvas } from './drawing';
 import { setupEventHandlers, State } from './events';
+import { drawBullets, moveBullets } from './bullet';
+
+let scrollOffset: number = 0;
 
 const { ctx, SCREEN_WIDTH, SCREEN_HEIGHT } = setupCanvas();
 const player = createPlayer(SCREEN_WIDTH, SCREEN_HEIGHT);
-
-let scrollOffset: number = 0;
+const bullets: Bullet[] = [];
 const state: State = {
   isShiftPressed: false,
   currentSlideIndex: 0,
@@ -85,6 +87,9 @@ export const updatePlayerPosition = (): void => {
 
 export const gameLoop = (): void => {
   clearCanvas(ctx, SCREEN_WIDTH, SCREEN_HEIGHT);
+  // Move and draw bullets
+  moveBullets(bullets, SCREEN_WIDTH);
+  drawBullets(ctx, bullets);
   drawGround(ctx, scrollOffset, SCREEN_HEIGHT, SCREEN_WIDTH, slides.length);
   drawBillboards(ctx, scrollOffset, SCREEN_WIDTH, visibleLines);
   drawPlayer(ctx, player);
@@ -92,4 +97,4 @@ export const gameLoop = (): void => {
   requestAnimationFrame(gameLoop);
 };
 
-setupEventHandlers(player, visibleLines, state);
+setupEventHandlers(player, visibleLines, state, bullets);

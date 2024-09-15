@@ -51,3 +51,24 @@ export const createPlayer = (
   moving: false,
   jumping: false,
 });
+
+/**
+ * PART BULLET
+ */
+export interface Bullet {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  speed: number;
+  direction: 'left' | 'right';
+}
+
+export const createBullet = (player: Player): Bullet => ({
+  x: player.x + player.width / 2,
+  y: player.y + player.height / 2,
+  width: 10,
+  height: 5,
+  speed: 15,
+  direction: player.direction,
+});
