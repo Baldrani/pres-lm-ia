@@ -1,28 +1,63 @@
-# How to use the presentation
-===========================
 
-Once the page has loaded you can load the mech by pressing `P`.
+# AI-Enhanced Coding Presentation
 
-The mech can move left and right using the arrow keys. The mech can move at 5x speed by holding down the `shift` key.
+## Overview
 
-On each slide you can reveal each separate text by pressing the `space bar`.
+Welcome to the presentation on AI-assisted coding tools! This project explores the usage of tools like GitHub Copilot, Codium AI, CodeRabbit, and more, as we dive into how these tools can streamline development, testing, and code review processes.
 
-## How to run the presentation
+Throughout the presentation, you’ll see demos of various AI tools in action, exploring their strengths and limitations. The presentation is interactive, so feel free to follow along!
 
-`npm run build`
-`npm run start`
+## Resources
 
-## How to develop
+Here are some of the key resources mentioned in the presentation:
 
-`npm run build:watch`
-`npm run start`
+- [Continue.dev](https://www.continue.dev/) – A promising AI tool for assisted code writing and debugging.
+- [Can AI Code? Results](https://huggingface.co/spaces/mike-ravkine/can-ai-code-results) – A Hugging Face space that provides insights into AI's ability to generate code.
+- [PR-Agent Documentation](https://pr-agent-docs.codium.ai/usage-guide/changing_a_model/#azure) – Learn more about Codium AI’s PR-Agent and how to change the AI model it uses.
+- [Pull Request Example](https://github.com/Baldrani/pres-lm-ia/pull/5) – A detailed pull request walkthrough used during the demo.
+- [AI Tools in Action - YouTube Video](https://www.youtube.com/watch?v=6xlPJiNpCVw) – A YouTube video showcasing AI tools applied to real-world coding tasks.
+- [Learning to Reason with LLMs](https://openai.com/index/learning-to-reason-with-llms/) – OpenAI’s latest research on using language models to solve complex problems.
+- [Enhancing Ontology with ChatGPT for Improved Search and User Satisfaction](https://www.notion.so/Enhancing-Ontology-with-ChatGPT-for-Improved-Search-and-User-Satisfaction-302643c2cdc44e05aebd0faa0a38bea9?pvs=21) – A project exploring how ChatGPT can improve search functionality and user experience.
 
----
-Based on node-typescript-boilerplate
+## How to Use the Presentation
 
-## Usefull link
+Once the page has loaded, you can start interacting with the presentation:
 
-### Copilot
+- Press `P` to load the mech.
+- Control the mech with the arrow keys (left/right) and hold `Shift` for 5x speed.
+- On each slide, press the `space bar` to reveal the next section of text.
 
-- [Copilot Doc](https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide)
-- [Community Discussion](https://github.com/orgs/community/discussions/categories/copilot)
+## How to Run the Presentation
+
+To run the presentation locally, follow these steps:
+
+1. Install the necessary dependencies:
+   \`\`\`bash
+   npm install
+   \`\`\`
+
+2. Build the project:
+   \`\`\`bash
+   npm run build
+   \`\`\`
+
+3. Start the presentation:
+   \`\`\`bash
+   npm run start
+   \`\`\`
+
+## How to Develop
+
+For development purposes, you can use the following commands:
+
+- Automatically rebuild on changes:
+  \`\`\`bash
+  npm run build:watch
+  \`\`\`
+
+## Other Useful Links
+
+### GitHub Copilot
+
+- [GitHub Copilot Documentation](https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide) – Learn how to make the most of GitHub Copilot.
+- [Community Discussions on Copilot](https://github.com/orgs/community/discussions/categories/copilot) – A place to discuss Copilot with the community and share tips.
