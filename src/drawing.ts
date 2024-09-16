@@ -109,19 +109,16 @@ export const drawBillboards = (
       }
       if (itemIndex === 0) {
         ctx.fillStyle = '#3ad4a7';
-        ctx.font = '30px Arial';
+        ctx.font = '40px Arial';
         ctx.fillText(content, x, y);
       } else {
         ctx.fillStyle = '#444';
         ctx.font = '20px Arial';
         if (itemIndex < visibleLines[index]) {
-          console.log('Debug time');
           if (item.cleanPreviousSlideItems) {
-            console.log('ici');
             ctx.clearRect(0, HEADER_Y_POSITION, screenWidth, 30000);
           }
           if (item?.opacity < 1) {
-            console.log('Opacity');
             item.opacity += 0.02;
           }
           if (
@@ -129,10 +126,8 @@ export const drawBillboards = (
               ? void 0
               : content.match(/\.(jpeg|jpg|png|webp)$/)
           ) {
-            console.log('Image');
             drawImage(ctx, content, x, y, item?.opacity || 1);
           } else {
-            console.log('Texte');
             ctx.fillStyle = `rgba(0, 0, 0, ${item?.opacity || 1})`;
             ctx.fillText(content, x, y);
           }
