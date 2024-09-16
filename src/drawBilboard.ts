@@ -83,8 +83,27 @@ export const updatePlayerPosition = (): void => {
   updateSlideNumber();
 };
 
+let backgroundX = 0;
+const backgroundImage = new Image();
+backgroundImage.src = './static/images/background.jpg';
+
+function drawBackground(ctx: CanvasRenderingContext2D, player): void {
+  const { width, height } = ctx.canvas;
+  const speed = player.dx * 50; // Adjust the speed factor as needed
+
+  backgroundX -= speed;
+  if (backgroundX <= -width) {
+    backgroundX = 0;
+  }
+
+  ctx.drawImage(backgroundImage, backgroundX, 0, width, height);
+  ctx.drawImage(backgroundImage, backgroundX + width, 0, width, height);
+}
+
 export const gameLoop = (): void => {
   clearCanvas(ctx, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+  drawBackground(ctx, player);
   drawGround(ctx, scrollOffset, SCREEN_HEIGHT, SCREEN_WIDTH, slides.length);
   drawBillboards(ctx, scrollOffset, SCREEN_WIDTH, visibleLines);
   drawPlayer(ctx, player);
