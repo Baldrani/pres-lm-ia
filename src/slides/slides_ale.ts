@@ -28,13 +28,25 @@ const slides: SlideElement[][] = [
   ],
   [{ content: 'Spoiler alert', position: { x: 100, y: HEADER_Y_POSITION } }],
   [
-    { content: 'Super Mario', position: { x: 100, y: HEADER_Y_POSITION } },
-    {
-      content:
-        'const maxRight: number = SCREEN_WIDTH * (slides.length - 1) + SCREEN_WIDTH / 2;',
-      position: { x: 100, y: TEXT_FIRST_LINE_Y_POSITION },
-    },
+   { content: 'Super Mario', position: { x: 100, y: HEADER_Y_POSITION } },
+   {
+     content: 'const maxRight: number = SCREEN_WIDTH * (slides.length - 1) + SCREEN_WIDTH / 2;',
+     position: { x: 100, y: TEXT_FIRST_LINE_Y_POSITION },
+   },
   ],
+  [
+    { content: 'Improving Abilities?', position: { x: 100, y: HEADER_Y_POSITION } }, 
+    { content: 'Great for PoC', position: { x: 100, y: TEXT_FIRST_LINE_Y_POSITION } }, 
+    { content: 'Common skills', position: { x: 100, y: TEXT_SECOND_LINE_Y_POSITION } }, 
+    { content: 'Basic problem solving', position: { x: 100, y: TEXT_THIRD_LINE_Y_POSITION } }, 
+    { content: 'Hallucinations', position: { x: 100, y: TEXT_FOURTH_LINE_Y_POSITION } }, 
+    { content: `Can't reason`, position: { x: 100, y: TEXT_FIFTH_LINE_Y_POSITION } }, 
+  ],
+  [ 
+    { content: 'AI assistants are the new calculators', position: { x: 100, y: HEADER_Y_POSITION } },
+    { content: 'Adjust to the new reality', position: { x: 100, y: TEXT_FIRST_LINE_Y_POSITION } }, 
+  ],
+  [ { content: '[poll] Which AI assistants are you using?', position: { x: 100, y: HEADER_Y_POSITION } }, ],
   [
     {
       content: 'Improving Abilities?',
