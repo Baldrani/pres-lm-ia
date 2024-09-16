@@ -52,5 +52,16 @@ const slides: SlideElement[][] = [
       position: { x: 200, y: HEADER_Y_POSITION },
     },
   ],
+  [
+    {
+      content: 'Conclusion',
+      position: { x: 200, y: HEADER_Y_POSITION },
+    },
+    {
+      content: '',
+      triggerFinal: true,
+      position: { x: 100, y: HEADER_Y_POSITION },
+    },
+  ],
 ];
 export default slides;

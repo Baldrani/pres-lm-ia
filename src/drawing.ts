@@ -86,6 +86,7 @@ export const drawGround = (
   );
 };
 
+let finalGifYPosition = 500;
 export const drawBillboards = (
   ctx: CanvasRenderingContext2D,
   scrollOffset: number,
@@ -115,6 +116,13 @@ export const drawBillboards = (
         ctx.fillStyle = '#444';
         ctx.font = '20px Orbitron';
         if (itemIndex < visibleLines[index]) {
+          if (item.triggerFinal) {
+            if (finalGifYPosition > 50) {
+              finalGifYPosition = finalGifYPosition - 0.5;
+            }
+            document.getElementById('final-gif').style.transform =
+              `translate(-50%, -${finalGifYPosition}%)`;
+          }
           if (item.cleanPreviousSlideItems) {
             ctx.clearRect(0, HEADER_Y_POSITION, screenWidth, 30000);
           }
@@ -124,7 +132,7 @@ export const drawBillboards = (
           if (
             content === null || content === void 0
               ? void 0
-              : content.match(/\.(jpeg|jpg|png|webp)$/)
+              : content.match(/\.(jpeg|jpg|png|webp|gif)$/)
           ) {
             drawImage(ctx, content, x, y, item?.opacity || 1);
           } else {

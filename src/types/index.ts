@@ -8,6 +8,7 @@ export type SlideElement = {
   position: Position;
   opacity?: number;
   cleanPreviousSlideItems?: boolean;
+  triggerFinal?: boolean;
 };
 
 export const HEADER_Y_POSITION = 200;
