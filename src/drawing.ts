@@ -109,11 +109,11 @@ export const drawBillboards = (
       }
       if (itemIndex === 0) {
         ctx.fillStyle = '#3ad4a7';
-        ctx.font = '40px Arial';
+        ctx.font = '35px PressStart2P';
         ctx.fillText(content, x, y);
       } else {
         ctx.fillStyle = '#444';
-        ctx.font = '20px Arial';
+        ctx.font = '20px Orbitron';
         if (itemIndex < visibleLines[index]) {
           if (item.cleanPreviousSlideItems) {
             ctx.clearRect(0, HEADER_Y_POSITION, screenWidth, 30000);
