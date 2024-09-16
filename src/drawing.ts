@@ -25,7 +25,7 @@ export const drawImage = (
     const scale: number = Math.min(600 / img.width, 600 / img.height);
     const imgWidth: number = img.width * scale;
     const imgHeight: number = img.height * scale;
-    const imgX: number = x - imgWidth / 2;
+    const imgX: number = x + imgWidth / 2;
     const imgY: number = y;
     ctx.globalAlpha = fadeAmount;
     ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
@@ -35,15 +35,15 @@ export const drawImage = (
       const scale: number = Math.min(600 / img.width, 600 / img.height);
       const imgWidth: number = img.width * scale;
       const imgHeight: number = img.height * scale;
-      const imgX: number = x - imgWidth / 2;
+      const imgX: number = x + imgWidth / 2;
+
       const imgY: number = y;
       ctx.globalAlpha = fadeAmount;
       ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
       ctx.globalAlpha = 1;
     };
-    img.onerror = function (e) {
+    img.onerror = function () {
       console.error('Failed to load image at ' + content);
-      console.error(e);
     };
   }
 };
