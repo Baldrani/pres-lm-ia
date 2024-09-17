@@ -88,12 +88,13 @@ export const drawGround = (
 
 const triggerAudio = (): void => {
   const audio = document.getElementById('pokemon') as HTMLAudioElement;
+  audio.volume = 0.3;
 
   if (audio.paused) {
     audio.play();
     setTimeout(function () {
       audio.pause();
-    }, 13500);
+    }, 9500);
   }
 };
 
