@@ -120,10 +120,6 @@ const slides: SlideElement[][] = [
     },
   ],
   [
-    { content: 'Security', position: { x: 100, y: HEADER_Y_POSITION } },
-    { content: 'Snyk AI', position: { x: 100, y: TEXT_FIRST_LINE_Y_POSITION } },
-  ],
-  [
     {
       content: '[poll] How often do you use AI tools?',
       position: { x: 100, y: HEADER_Y_POSITION },
