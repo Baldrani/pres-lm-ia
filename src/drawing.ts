@@ -16,7 +16,7 @@ export const getImage = (src: string): HTMLImageElement => {
 export const drawImage = (
   ctx: CanvasRenderingContext2D,
   content: string,
-  x: number,
+  x: number | 'center',
   y: number,
   fadeAmount: number,
 ): void => {
@@ -25,7 +25,12 @@ export const drawImage = (
     const scale: number = Math.min(600 / img.width, 600 / img.height);
     const imgWidth: number = img.width * scale;
     const imgHeight: number = img.height * scale;
-    const imgX: number = x + imgWidth / 2;
+    let imgX: number;
+    if (x === 'center') {
+      imgX = (ctx.canvas.width - imgWidth) / 2;
+    } else {
+      imgX = x + imgWidth / 2;
+    }
     const imgY: number = y;
     ctx.globalAlpha = fadeAmount;
     ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
@@ -35,7 +40,12 @@ export const drawImage = (
       const scale: number = Math.min(600 / img.width, 600 / img.height);
       const imgWidth: number = img.width * scale;
       const imgHeight: number = img.height * scale;
-      const imgX: number = x + imgWidth / 2;
+      let imgX: number;
+      if (x === 'center') {
+        imgX = (ctx.canvas.width - imgWidth) / 2;
+      } else {
+        imgX = x + imgWidth / 2;
+      }
 
       const imgY: number = y;
       ctx.globalAlpha = fadeAmount;
@@ -110,17 +120,20 @@ export const drawBillboards = (
     const textX: number = screenWidth * index + screenWidth / 2;
     slide.forEach((item, itemIndex) => {
       const { content, position = {} } = item;
-      let {
-        //@ts-expect-error x is not defined
-        x = textX - scrollOffset - ctx.measureText(content).width / 2,
-      } = position;
-      //@ts-expect-error y is not defined
+
+      //@ts-expect-error NOT A DESCRIPTION
+      let { x } = position;
+      //@ts-expect-error NOT A DESCRIPTION
       const { y = 0 } = position;
-      if (x === undefined) {
+
+      if (x === 'center') {
+        x = textX - scrollOffset - ctx.measureText(content).width / 2;
+      } else if (x === undefined) {
         x = textX - scrollOffset - ctx.measureText(content).width / 2;
       } else {
         x = x + textX - screenWidth / 2 - scrollOffset;
       }
+
       if (itemIndex === 0) {
         ctx.fillStyle = '#3ad4a7';
         ctx.font = '35px PressStart2P';
