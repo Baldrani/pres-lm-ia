@@ -138,6 +138,11 @@ const slides: SlideElement[][] = [
       content: '[poll] How often do you use AI tools?',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
+    {
+      content: 'http://localhost:3000/static/images/chatgpt_percentage.png',
+      position: { x: 0, y: 300 },
+      opacity: 0,
+    },
   ],
   [
     {
