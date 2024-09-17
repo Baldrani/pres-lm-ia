@@ -28,7 +28,10 @@ const slides: SlideElement[][] = [
   ],
   [{ content: 'Spoiler alert', position: { x: 100, y: HEADER_Y_POSITION } }],
   [
-    { content: 'Super Mario', position: { x: 100, y: HEADER_Y_POSITION } },
+    {
+      content: 'Super Mario',
+      position: { x: 100, y: HEADER_Y_POSITION },
+    },
     {
       content:
         'const maxRight: number = SCREEN_WIDTH * (slides.length - 1) + SCREEN_WIDTH / 2;',
