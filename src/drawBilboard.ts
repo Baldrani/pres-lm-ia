@@ -85,19 +85,21 @@ export const updatePlayerPosition = (): void => {
 
 let backgroundX = 0;
 const backgroundImage = new Image();
-backgroundImage.src = './static/images/background.jpg';
-
+backgroundImage.src = './static/images/background.webp';
 function drawBackground(ctx: CanvasRenderingContext2D, player): void {
   const { width, height } = ctx.canvas;
-  const speed = player.dx * 50; // Adjust the speed factor as needed
+  const speed = player.dx * 50;
 
   backgroundX -= speed;
   if (backgroundX <= -width) {
-    backgroundX = 0;
+    backgroundX += width;
+  } else if (backgroundX >= width) {
+    backgroundX -= width;
   }
 
   ctx.drawImage(backgroundImage, backgroundX, 0, width, height);
   ctx.drawImage(backgroundImage, backgroundX + width, 0, width, height);
+  ctx.drawImage(backgroundImage, backgroundX - width, 0, width, height);
 }
 
 export const gameLoop = (): void => {

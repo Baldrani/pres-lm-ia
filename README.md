@@ -11,8 +11,8 @@ Throughout the presentation, you’ll see demos of various AI tools in action, e
 
 Here are some of the key resources mentioned in the presentation:
 
-- [Continue.dev](https://www.continue.dev/) – A promising AI tool for assisted code writing and debugging.
 - [Can AI Code? Results](https://huggingface.co/spaces/mike-ravkine/can-ai-code-results) – A Hugging Face space that provides insights into AI's ability to generate code.
+- [Continue.dev](https://www.continue.dev/) – A promising AI tool for assisted code writing and debugging.
 - [PR-Agent Documentation](https://pr-agent-docs.codium.ai/usage-guide/changing_a_model/#azure) – Learn more about Codium AI’s PR-Agent and how to change the AI model it uses.
 - [Pull Request Example](https://github.com/Baldrani/pres-lm-ia/pull/5) – A detailed pull request walkthrough used during the demo.
 - [AI Tools in Action - YouTube Video](https://www.youtube.com/watch?v=6xlPJiNpCVw) – A YouTube video showcasing AI tools applied to real-world coding tasks.
