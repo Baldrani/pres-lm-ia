@@ -8,6 +8,7 @@ export type SlideElement = {
   position: Position;
   opacity?: number;
   cleanPreviousSlideItems?: boolean;
+  isPokemonAudio?: boolean;
   triggerFinal?: boolean;
 };
 

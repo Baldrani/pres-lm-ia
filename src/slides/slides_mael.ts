@@ -37,7 +37,13 @@ const slides: SlideElement[][] = [
   [
     {
       content: 'Testing with Codium AI ',
-      position: { x: 200, y: HEADER_Y_POSITION },
+      position: { x: 500, y: HEADER_Y_POSITION },
+    },
+    {
+      content: 'http://localhost:3000/static/images/codium.png',
+      position: { x: 500, y: 300 },
+      opacity: 0,
+      isPokemonAudio: true,
     },
   ],
   [

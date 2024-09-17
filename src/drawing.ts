@@ -86,6 +86,18 @@ export const drawGround = (
   );
 };
 
+const triggerAudio = (): void => {
+  const audio = document.getElementById('pokemon') as HTMLAudioElement;
+
+  if (audio.paused) {
+    audio.play();
+    setTimeout(function () {
+      audio.pause();
+    }, 13500);
+  }
+};
+
+let isPokemonAudioPlaying = false;
 let finalGifYPosition = 500;
 export const drawBillboards = (
   ctx: CanvasRenderingContext2D,
@@ -113,9 +125,11 @@ export const drawBillboards = (
         ctx.font = '35px PressStart2P';
         ctx.fillText(content, x, y);
       } else {
-        ctx.fillStyle = '#444';
-        ctx.font = '20px Orbitron';
         if (itemIndex < visibleLines[index]) {
+          if (item.isPokemonAudio && !isPokemonAudioPlaying) {
+            isPokemonAudioPlaying = true;
+            triggerAudio();
+          }
           if (item.triggerFinal) {
             if (finalGifYPosition > 50) {
               finalGifYPosition = finalGifYPosition - 0.5;
@@ -136,6 +150,8 @@ export const drawBillboards = (
           ) {
             drawImage(ctx, content, x, y, item?.opacity || 1);
           } else {
+            ctx.fillStyle = '#fff';
+            ctx.font = '25px Exo2';
             ctx.fillStyle = `rgba(0, 0, 0, ${item?.opacity || 1})`;
             ctx.fillText(content, x, y);
           }
