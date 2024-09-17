@@ -1,5 +1,5 @@
 export type Position = {
-  x: number;
+  x: number | 'center';
   y: number;
 };
 
@@ -18,12 +18,3 @@ export const TEXT_SECOND_LINE_Y_POSITION = 450;
 export const TEXT_THIRD_LINE_Y_POSITION = 500;
 export const TEXT_FOURTH_LINE_Y_POSITION = 550;
 export const TEXT_FIFTH_LINE_Y_POSITION = 600;
-
-export type Bullet = {
-  x: number;
-  y: number;
-  dx: number;
-  dy: number;
-  width: number;
-  height: number;
-};

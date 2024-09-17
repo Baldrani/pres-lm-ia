@@ -1,5 +1,3 @@
-import { Bullet } from './types';
-
 // src/player.ts
 export interface Player {
   x: number;
@@ -57,13 +55,4 @@ export const createPlayer = (
   isVisible: false,
   moving: false,
   jumping: false,
-});
-
-export const createBullet = (player: Player): Bullet => ({
-  x: player.x + player.width / 2,
-  y: player.y + player.height / 2,
-  dx: player.direction === 'right' ? 10 : -10,
-  dy: 0,
-  width: 10,
-  height: 5,
 });

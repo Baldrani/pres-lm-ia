@@ -12,7 +12,7 @@ const slides: SlideElement[][] = [
   [
     {
       content: 'Exploring AI with Atlas',
-      position: { x: 100, y: HEADER_Y_POSITION },
+      position: { x: center, y: HEADER_Y_POSITION },
     },
   ],
   [

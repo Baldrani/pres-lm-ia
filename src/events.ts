@@ -1,5 +1,4 @@
-import { bullets } from './drawBilboard';
-import { createBullet, Player } from './player';
+import { Player } from './player';
 import slides from './slides/index';
 
 export interface State {
@@ -37,8 +36,6 @@ export const setupEventHandlers = (
       ) {
         visibleLines[state.currentSlideIndex]++;
       }
-    } else if (e.key === 'f' || e.key === 'F') {
-      bullets.push(createBullet(player));
     }
   };
 

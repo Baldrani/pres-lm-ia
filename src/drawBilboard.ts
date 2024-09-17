@@ -3,7 +3,6 @@ import { setupCanvas } from './canvas';
 import { createPlayer } from './player';
 import { drawPlayer, drawGround, drawBillboards, clearCanvas } from './drawing';
 import { setupEventHandlers, State } from './events';
-import { Bullet } from './types';
 
 const { ctx, SCREEN_WIDTH, SCREEN_HEIGHT } = setupCanvas();
 const player = createPlayer(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -101,13 +100,6 @@ function drawBackground(ctx: CanvasRenderingContext2D, player): void {
   ctx.drawImage(backgroundImage, backgroundX + width, 0, width, height);
 }
 
-export let bullets: Bullet[] = [];
-
-const drawBullet = (ctx: CanvasRenderingContext2D, bullet: Bullet): void => {
-  ctx.fillStyle = 'black';
-  ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
-};
-
 export const gameLoop = (): void => {
   clearCanvas(ctx, SCREEN_WIDTH, SCREEN_HEIGHT);
 
@@ -116,13 +108,6 @@ export const gameLoop = (): void => {
   drawBillboards(ctx, scrollOffset, SCREEN_WIDTH, visibleLines);
   drawPlayer(ctx, player);
   updatePlayerPosition();
-
-  // Update and draw bullets
-  bullets = bullets.filter((bullet) => bullet.x > 0 && bullet.x < SCREEN_WIDTH);
-  bullets.forEach((bullet) => {
-    bullet.x += bullet.dx;
-    drawBullet(ctx, bullet);
-  });
 
   requestAnimationFrame(gameLoop);
 };
