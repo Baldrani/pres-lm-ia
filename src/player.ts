@@ -25,11 +25,11 @@ export const playerImages: { [key: string]: HTMLImageElement } = {
   movingLeft: new Image(),
 };
 
-playerImages.falling.src = 'https://i.imgur.com/yEgjvIj.png';
-playerImages.standingRight.src = 'https://i.imgur.com/zTXnpLn.png';
-playerImages.standingLeft.src = 'https://i.imgur.com/5z23GS8.png';
-playerImages.movingRight.src = 'https://i.imgur.com/URdylT0.png';
-playerImages.movingLeft.src = 'https://i.imgur.com/HopOYyN.png';
+playerImages.falling.src = 'http://localhost:3000/static/images/atlas_falling.png';
+playerImages.standingRight.src = 'http://localhost:3000/static/images/atlas_standing_right.png';
+playerImages.standingLeft.src = 'http://localhost:3000/static/images/atlas_standing_left.png';
+playerImages.movingRight.src = 'http://localhost:3000/static/images/atlas_moving_right.png';
+playerImages.movingLeft.src = 'http://localhost:3000/static/images/atlas_moving_left.png';
 
 export const createPlayer = (
   screenWidth: number,
