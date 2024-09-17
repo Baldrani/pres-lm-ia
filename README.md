@@ -19,6 +19,8 @@ Here are some of the key resources mentioned in the presentation:
 - [Learning to Reason with LLMs](https://openai.com/index/learning-to-reason-with-llms/) – OpenAI’s latest research on using language models to solve complex problems.
 - [Enhancing Ontology with ChatGPT for Improved Search and User Satisfaction](https://www.notion.so/Enhancing-Ontology-with-ChatGPT-for-Improved-Search-and-User-Satisfaction-302643c2cdc44e05aebd0faa0a38bea9?pvs=21) – A project exploring how ChatGPT can improve search functionality and user experience.
 
+- [Super Mario PoC](https://codepen.io/Alexandros-Tzotzolas/pen/QWXRBrB)
+
 ## How to Use the Presentation
 
 Once the page has loaded, you can start interacting with the presentation:
