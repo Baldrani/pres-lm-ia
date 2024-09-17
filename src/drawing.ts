@@ -146,7 +146,7 @@ export const drawBillboards = (
           }
           if (item.triggerFinal) {
             if (finalGifYPosition > 50) {
-              finalGifYPosition = finalGifYPosition - 0.5;
+              finalGifYPosition = finalGifYPosition - 2;
             }
             document.getElementById('final-gif').style.transform =
               `translate(-50%, -${finalGifYPosition}%)`;

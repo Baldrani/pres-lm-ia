@@ -34,11 +34,6 @@ const isScrollOffsetNegative = (): boolean => {
   return scrollOffset < 0;
 };
 
-/**
- * Updates the position of the player character based on the current game state.
- * This function handles player movement, gravity, and collision detection with the ground.
- * It also manages the scrolling of the game world based on the player's position.
- */
 export const updatePlayerPosition = (): void => {
   if (!player.isVisible) return;
   const effectiveSpeed: number = state.isShiftPressed
@@ -88,7 +83,7 @@ const backgroundImage = new Image();
 backgroundImage.src = './static/images/background.webp';
 function drawBackground(ctx: CanvasRenderingContext2D, player): void {
   const { width, height } = ctx.canvas;
-  const speed = player.dx * 50;
+  const speed = player.dx * 5;
 
   backgroundX -= speed;
   if (backgroundX <= -width) {
