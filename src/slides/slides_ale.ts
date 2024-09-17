@@ -141,8 +141,8 @@ const slides: SlideElement[][] = [
   ],
   [
     {
-      content: '[poll] Have you felt any improvement using those tools?',
-      position: { x: 'center', y: HEADER_Y_POSITION },
+      content: '[poll] Have you noticed any improvements using AI tools?',
+      position: { x: 100, y: HEADER_Y_POSITION },
     },
   ],
 ];
