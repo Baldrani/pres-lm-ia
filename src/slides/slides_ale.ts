@@ -82,39 +82,6 @@ const slides: SlideElement[][] = [
   ],
   [
     {
-      content: 'Improving Abilities?',
-      position: { x: 100, y: HEADER_Y_POSITION },
-    },
-    {
-      content: 'Great for PoC',
-      position: { x: 100, y: TEXT_FIRST_LINE_Y_POSITION },
-    },
-    {
-      content: 'Common skills',
-      position: { x: 100, y: TEXT_SECOND_LINE_Y_POSITION },
-    },
-    {
-      content: 'Basic problem solving',
-      position: { x: 100, y: TEXT_THIRD_LINE_Y_POSITION },
-    },
-    {
-      content: 'Hallucinations',
-      position: { x: 100, y: TEXT_FOURTH_LINE_Y_POSITION },
-    },
-    {
-      content: `Can't reason`,
-      position: { x: 100, y: TEXT_FIFTH_LINE_Y_POSITION },
-    },
-  ],
-  [{ content: 'AI assistants', position: { x: 100, y: HEADER_Y_POSITION } }],
-  [
-    {
-      content: '[poll] AI assistants question?????',
-      position: { x: 100, y: HEADER_Y_POSITION },
-    },
-  ],
-  [
-    {
       content: 'Chatbots & Conversational AI',
       position: { x: 100, y: HEADER_Y_POSITION },
     },
