@@ -10,6 +10,7 @@ export type SlideElement = {
   cleanPreviousSlideItems?: boolean;
   isPokemonAudio?: boolean;
   triggerFinal?: boolean;
+  dontScale?: boolean;
 };
 
 export const HEADER_Y_POSITION = 200;

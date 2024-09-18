@@ -3,19 +3,8 @@ import { HEADER_Y_POSITION, SlideElement } from '../types/index';
 const slides: SlideElement[][] = [
   [
     {
-      content: 'Usage of Chat & Workspace ',
+      content: 'Usage of Copilote with Workspace & Brushes',
       position: { x: 'center', y: HEADER_Y_POSITION },
-    },
-  ],
-  [
-    {
-      content: 'Continue and local LLM',
-      position: { x: 'center', y: HEADER_Y_POSITION },
-    },
-    {
-      content: 'http://localhost:3000/static/images/o1benchmark.png',
-      position: { x: 'center', y: 300 },
-      opacity: 0,
     },
   ],
   [
@@ -25,7 +14,7 @@ const slides: SlideElement[][] = [
     },
     {
       content: 'http://localhost:3000/static/images/codium.png',
-      position: { x: 'center', y: 300 },
+      position: { x: 300, y: 300 },
       opacity: 0,
       isPokemonAudio: true,
     },
@@ -37,7 +26,19 @@ const slides: SlideElement[][] = [
     },
     {
       content: 'http://localhost:3000/static/images/coderabbit-flow.png',
-      position: { x: 'center', y: 300 },
+      position: { x: -200, y: 300 },
+      dontScale: true,
+      opacity: 0,
+    },
+  ],
+  [
+    {
+      content: 'Continue and local LLM',
+      position: { x: 'center', y: HEADER_Y_POSITION },
+    },
+    {
+      content: 'http://localhost:3000/static/images/o1benchmark.png',
+      position: { x: 300, y: 300 },
       opacity: 0,
     },
   ],
@@ -47,15 +48,15 @@ const slides: SlideElement[][] = [
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
     {
-      content: 'http://localhost:3000/static/images/curry.jpg',
-      position: { x: 'center', y: 300 },
+      content: 'http://localhost:3000/static/images/before-curry.jpg',
+      position: { x: 300, y: 300 },
       opacity: 0,
     },
-    // {
-    //   content: 'New slide on same slide 🧙‍♂️',
-    //   position: { x:'center', y: 500 },
-    //   cleanPreviousSlideItems: true,
-    // },
+    {
+      content: 'http://localhost:3000/static/images/curry.jpg',
+      position: { x: 800, y: 300 },
+      opacity: 0,
+    },
   ],
   [
     {
@@ -70,7 +71,6 @@ const slides: SlideElement[][] = [
     {
       content: 'http://localhost:3000/static/images/poll5.png',
       position: { x: 'center', y: 300 },
-      cleanPreviousSlideItems: true,
     },
   ],
   [

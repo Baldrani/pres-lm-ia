@@ -20,10 +20,13 @@ export const drawImage = (
   x: number | 'center',
   y: number,
   fadeAmount: number,
+  dontScale?: boolean,
 ): void => {
   const img: HTMLImageElement = getImage(content);
   if (img.complete) {
-    const scale: number = Math.min(600 / img.width, 600 / img.height);
+    const scale: number = dontScale
+      ? 1
+      : Math.min(600 / img.width, 600 / img.height);
     const imgWidth: number = img.width * scale;
     const imgHeight: number = img.height * scale;
     let imgX: number;
@@ -149,7 +152,7 @@ export const drawBillboards = (
               ? void 0
               : content.match(/\.(jpeg|jpg|png|webp|gif)$/)
           ) {
-            drawImage(ctx, content, x, y, item?.opacity || 1);
+            drawImage(ctx, content, x, y, item?.opacity || 1, item?.dontScale);
           } else {
             ctx.fillStyle = '#fff';
             ctx.font = '25px Exo2';
