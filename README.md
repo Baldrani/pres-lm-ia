@@ -66,3 +66,19 @@ For development purposes, you can use the following commands:
 
 - [GitHub Copilot Documentation](https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide) – Learn how to make the most of GitHub Copilot.
 - [Community Discussions on Copilot](https://github.com/orgs/community/discussions/categories/copilot) – A place to discuss Copilot with the community and share tips.
+
+
+
+## Poll questions
+
+```
+"Have you watched Atlas the movie?" "Yes, and I loved it" "Yes, and it sucks" "No, please no spoilers" "No, I don't care about spoilers"
+
+"Which types of AI assistants are you using?" "Chatbots" "Code Autocompletion" "Code Quality" "Testing/Debugging" "DevOps" "Security"
+
+"How often do you use AI tools?" "Every minute of my life" "Multiple times a day" "Multiple times a month" "I despise this :hankey:"
+
+"Have you noticed any improvements using AI tools?" "Yes, I don’t want to know how bad I would be without it" "I grew up with them and so I have no clue" "It made me a worse developer" "I can’t code anymore without it" "I still cannot center a div"
+
+"Has this presentation changed your mind about AI tools?" "Yes" "No" "I'm a sucker for them" "Let's go for lunch already"
+```
