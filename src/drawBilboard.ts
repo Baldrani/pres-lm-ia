@@ -1,7 +1,7 @@
 import slides from './slides/index';
 import { setupCanvas } from './canvas';
 import { createPlayer } from './player';
-import { drawPlayer, drawGround, drawBillboards, clearCanvas } from './drawing';
+import { drawPlayer, drawBillboards, clearCanvas } from './drawing';
 import { setupEventHandlers, State } from './events';
 
 const { ctx, SCREEN_WIDTH, SCREEN_HEIGHT } = setupCanvas();
@@ -104,7 +104,6 @@ export const gameLoop = (): void => {
   clearCanvas(ctx, SCREEN_WIDTH, SCREEN_HEIGHT);
 
   drawBackground(ctx, player);
-  drawGround(ctx, scrollOffset, SCREEN_HEIGHT, SCREEN_WIDTH, slides.length);
   drawBillboards(ctx, scrollOffset, SCREEN_WIDTH, visibleLines, state);
   drawPlayer(ctx, player);
   updatePlayerPosition();

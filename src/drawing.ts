@@ -81,22 +81,6 @@ export const drawPlayer = (
   ctx.drawImage(image, player.x, player.y, player.width, player.height);
 };
 
-export const drawGround = (
-  ctx: CanvasRenderingContext2D,
-  scrollOffset: number,
-  screenHeight: number,
-  screenWidth: number,
-  slidesLength: number,
-): void => {
-  ctx.fillStyle = '#FFFFFF';
-  ctx.fillRect(
-    -scrollOffset,
-    screenHeight - 30,
-    screenWidth * (slidesLength + 1),
-    30,
-  );
-};
-
 const triggerAudio = (): void => {
   const audio = document.getElementById('pokemon') as HTMLAudioElement;
   audio.volume = 0.3;
