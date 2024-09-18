@@ -29,6 +29,7 @@ Here are some of the key resources mentioned in the presentation:
 Once the page has loaded, you can start interacting with the presentation:
 
 - Press `P` to load the mech.
+- Press `s` to get a background.
 - Control the mech with the arrow keys (left/right) and hold `Shift` for 5x speed.
 - On each slide, press the `space bar` to reveal the next section of text.
 
