@@ -3,6 +3,7 @@ import { setupCanvas } from './canvas';
 import { createPlayer } from './player';
 import { drawPlayer, drawBillboards, clearCanvas } from './drawing';
 import { setupEventHandlers, State } from './events';
+import { drawBullets, updateBullets } from './bullets';
 
 const { ctx, SCREEN_WIDTH, SCREEN_HEIGHT } = setupCanvas();
 const player = createPlayer(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -107,6 +108,8 @@ export const gameLoop = (): void => {
   drawBillboards(ctx, scrollOffset, SCREEN_WIDTH, visibleLines, state);
   drawPlayer(ctx, player);
   updatePlayerPosition();
+  updateBullets();
+  drawBullets(ctx);
 
   requestAnimationFrame(gameLoop);
 };
