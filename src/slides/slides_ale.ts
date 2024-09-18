@@ -22,7 +22,7 @@ const slides: SlideElement[][] = [
     },
     {
       content: 'http://localhost:3000/static/images/atlas_movie.png',
-      position: { x: 0, y: 300 },
+      position: { x: 'center', y: 300 },
       opacity: 0,
     },
     {

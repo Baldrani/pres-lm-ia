@@ -1,3 +1,4 @@
+import { State } from './events';
 import { Player, playerImages } from './player';
 import slides from './slides/index';
 import { HEADER_Y_POSITION } from './types';
@@ -115,6 +116,7 @@ export const drawBillboards = (
   scrollOffset: number,
   screenWidth: number,
   visibleLines: number[],
+  state: State,
 ): void => {
   slides.forEach((slide, index) => {
     const textX: number = screenWidth * index + screenWidth / 2;
@@ -135,7 +137,7 @@ export const drawBillboards = (
 
       if (itemIndex === 0) {
         ctx.fillStyle = '#3ad4a7';
-        ctx.font = '35px PressStart2P';
+        ctx.font = state.isBackgroundVisible ? '35px PressStart2P' : '35px Arial';
         ctx.fillText(content, x, y);
       } else {
         if (itemIndex < visibleLines[index]) {

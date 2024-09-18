@@ -11,6 +11,7 @@ let scrollOffset: number = 0;
 const state: State = {
   isShiftPressed: false,
   currentSlideIndex: 0,
+  isBackgroundVisible: false,
 };
 const visibleLines: number[] = slides.map(() => 1);
 
@@ -82,6 +83,8 @@ let backgroundX = 0;
 const backgroundImage = new Image();
 backgroundImage.src = './static/images/background.webp';
 function drawBackground(ctx: CanvasRenderingContext2D, player): void {
+  if (!state.isBackgroundVisible) return;
+
   const { width, height } = ctx.canvas;
   const speed = player.dx * 5;
 
@@ -102,7 +105,7 @@ export const gameLoop = (): void => {
 
   drawBackground(ctx, player);
   drawGround(ctx, scrollOffset, SCREEN_HEIGHT, SCREEN_WIDTH, slides.length);
-  drawBillboards(ctx, scrollOffset, SCREEN_WIDTH, visibleLines);
+  drawBillboards(ctx, scrollOffset, SCREEN_WIDTH, visibleLines, state);
   drawPlayer(ctx, player);
   updatePlayerPosition();
 
