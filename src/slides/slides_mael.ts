@@ -65,12 +65,12 @@ const slides: SlideElement[][] = [
     },
     {
       content: 'http://localhost:3000/static/images/meme.webp',
-      position: { x: 'center', y: 300 },
+      position: { x: 100, y: 300 },
       opacity: 0,
     },
     {
       content: 'http://localhost:3000/static/images/poll5.png',
-      position: { x: 'center', y: 300 },
+      position: { x: 800, y: 300 },
     },
   ],
   [
