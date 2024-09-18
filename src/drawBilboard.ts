@@ -3,6 +3,7 @@ import { setupCanvas } from './canvas';
 import { createPlayer } from './player';
 import { drawPlayer, drawGround, drawBillboards, clearCanvas } from './drawing';
 import { setupEventHandlers, State } from './events';
+import { Bullet } from './types';
 
 const { ctx, SCREEN_WIDTH, SCREEN_HEIGHT } = setupCanvas();
 const player = createPlayer(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -100,6 +101,28 @@ function drawBackground(ctx: CanvasRenderingContext2D, player): void {
   ctx.drawImage(backgroundImage, backgroundX - width, 0, width, height);
 }
 
+const updateBullets = (bullets: Bullet[]): void => {
+  bullets.forEach((bullet, index) => {
+    bullet.x += bullet.dx;
+    bullet.y += bullet.dy;
+
+    // Remove bullets that go off-screen
+    if (bullet.x < 0 || bullet.x > window.innerWidth) {
+      bullets.splice(index, 1);
+    }
+  });
+};
+
+const drawBullets = (
+  ctx: CanvasRenderingContext2D,
+  bullets: Bullet[],
+): void => {
+  bullets.forEach((bullet) => {
+    ctx.fillStyle = 'red';
+    ctx.fillRect(bullet.x, bullet.y, bullet.width, 3);
+  });
+};
+
 export const gameLoop = (): void => {
   clearCanvas(ctx, SCREEN_WIDTH, SCREEN_HEIGHT);
 
@@ -107,6 +130,8 @@ export const gameLoop = (): void => {
   drawGround(ctx, scrollOffset, SCREEN_HEIGHT, SCREEN_WIDTH, slides.length);
   drawBillboards(ctx, scrollOffset, SCREEN_WIDTH, visibleLines, state);
   drawPlayer(ctx, player);
+  drawBullets(ctx, player.bullets);
+  updateBullets(player.bullets);
   updatePlayerPosition();
 
   requestAnimationFrame(gameLoop);

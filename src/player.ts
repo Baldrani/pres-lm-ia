@@ -1,3 +1,5 @@
+import { Bullet } from './types';
+
 // src/player.ts
 export interface Player {
   x: number;
@@ -15,6 +17,7 @@ export interface Player {
   isVisible: boolean;
   moving: boolean;
   jumping: boolean;
+  bullets: Bullet[];
 }
 
 export const playerImages: { [key: string]: HTMLImageElement } = {
@@ -55,4 +58,14 @@ export const createPlayer = (
   isVisible: false,
   moving: false,
   jumping: false,
+  bullets: [],
+});
+
+export const createBullet = (player: Player): Bullet => ({
+  x: player.x + player.width / 2,
+  y: player.y + player.height / 2,
+  dx: player.direction === 'right' ? 10 : -10,
+  dy: 0,
+  width: 10,
+  height: 5,
 });

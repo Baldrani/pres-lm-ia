@@ -12,6 +12,15 @@ export type SlideElement = {
   triggerFinal?: boolean;
 };
 
+export type Bullet = {
+  x: number;
+  y: number;
+  dx: number;
+  dy: number;
+  width: number;
+  height: number;
+};
+
 export const HEADER_Y_POSITION = 200;
 export const TEXT_FIRST_LINE_Y_POSITION = 400;
 export const TEXT_SECOND_LINE_Y_POSITION = 450;
