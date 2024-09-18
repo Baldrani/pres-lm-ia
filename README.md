@@ -1,7 +1,7 @@
 
 # AI-Enhanced Coding Presentation
 
-![Best Presentation Ever Cover](http://url/to/img.png](https://raw.githubusercontent.com/Baldrani/pres-lm-ia/main/public/images/cover.png)
+![Best Presentation Ever Cover](public/images/cover.png)
 
 
 ## Overview
