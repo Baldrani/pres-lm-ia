@@ -1,6 +1,9 @@
 
 # AI-Enhanced Coding Presentation
 
+![Best Presentation Ever Cover](http://url/to/img.png](https://raw.githubusercontent.com/Baldrani/pres-lm-ia/main/public/images/cover.png)
+
+
 ## Overview
 
 Welcome to the presentation on AI-assisted coding tools! This project explores the usage of tools like GitHub Copilot, Codium AI, CodeRabbit, and more, as we dive into how these tools can streamline development, testing, and code review processes.
