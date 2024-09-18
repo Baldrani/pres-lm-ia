@@ -67,6 +67,11 @@ const slides: SlideElement[][] = [
       position: { x: 'center', y: 300 },
       opacity: 0,
     },
+    {
+      content: 'http://localhost:3000/static/images/poll5.png',
+      position: { x: 'center', y: 300 },
+      cleanPreviousSlideItems: true,
+    },
   ],
   [
     {

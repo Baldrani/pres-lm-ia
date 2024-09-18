@@ -17,12 +17,17 @@ const slides: SlideElement[][] = [
   ],
   [
     {
-      content: '[poll] Have you watched Atlas?',
+      content: 'Question time',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
     {
       content: 'http://localhost:3000/static/images/atlas_movie.png',
       position: { x: 0, y: 300 },
+      opacity: 0,
+    },
+    {
+      content: 'http://localhost:3000/static/images/poll1.png',
+      position: { x: 500, y: 300 },
       opacity: 0,
     },
   ],
@@ -81,8 +86,13 @@ const slides: SlideElement[][] = [
   ],
   [
     {
-      content: '[poll] Which AI assistants are you using?',
+      content: 'And you?',
       position: { x: 'center', y: HEADER_Y_POSITION },
+    },
+    {
+      content: 'http://localhost:3000/static/images/poll2.png',
+      position: { x: 'center', y: 300 },
+      opacity: 0,
     },
   ],
   [
@@ -135,7 +145,7 @@ const slides: SlideElement[][] = [
   ],
   [
     {
-      content: '[poll] How often do you use AI tools?',
+      content: 'I want you for AI Army',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
     {
@@ -143,11 +153,21 @@ const slides: SlideElement[][] = [
       position: { x: 0, y: 300 },
       opacity: 0,
     },
+    {
+      content: 'http://localhost:3000/static/images/poll3.png',
+      position: { x: 500, y: 500 },
+      opacity: 0,
+    },
   ],
   [
     {
-      content: '[poll] Have you noticed any improvements using AI tools?',
+      content: 'BUT?',
       position: { x: 100, y: HEADER_Y_POSITION },
+    },
+    {
+      content: 'http://localhost:3000/static/images/poll4.png',
+      position: { x: 500, y: 500 },
+      opacity: 0,
     },
   ],
 ];
