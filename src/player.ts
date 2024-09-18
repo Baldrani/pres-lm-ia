@@ -42,8 +42,8 @@ export const createPlayer = (
 ): Player => ({
   x: screenWidth / 2,
   y: 0,
-  width: 150,
-  height: 150,
+  width: 300,
+  height: 300,
   speed: 10,
   dx: 0,
   dy: 0,
