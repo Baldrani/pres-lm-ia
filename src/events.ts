@@ -4,7 +4,7 @@ import slides from './slides/index';
 export interface State {
   isShiftPressed: boolean;
   currentSlideIndex: number;
-  isBackgroundVisible: boolean
+  isBackgroundVisible?: boolean;
 }
 
 export const setupEventHandlers = (
@@ -38,7 +38,7 @@ export const setupEventHandlers = (
         visibleLines[state.currentSlideIndex]++;
       }
     } else if (e.key === 's' || e.key === 'S') {
-        state.isBackgroundVisible = !state.isBackgroundVisible;
+      state.isBackgroundVisible = !state.isBackgroundVisible;
     }
   };
 

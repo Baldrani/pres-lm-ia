@@ -8,6 +8,12 @@ import {
   TEXT_THIRD_LINE_Y_POSITION,
 } from '../types/index';
 
+const emptyText = {
+  content: '',
+  position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
+} as SlideElement;
+
+
 const slides: SlideElement[][] = [
   [
     {
@@ -20,14 +26,15 @@ const slides: SlideElement[][] = [
       content: 'Question time',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
+    emptyText,
     {
       content: 'http://localhost:3000/static/images/atlas_movie.png',
-      position: { x: 'center', y: 300 },
+      position: { x: 100, y: 300 },
       opacity: 0,
     },
     {
       content: 'http://localhost:3000/static/images/poll1.png',
-      position: { x: 500, y: 300 },
+      position: { x: 550, y: 300 },
       opacity: 0,
     },
   ],
@@ -42,6 +49,7 @@ const slides: SlideElement[][] = [
       content: 'Super Mario',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
+    emptyText,
     {
       content:
         'const maxRight: number = SCREEN_WIDTH * (slides.length - 1) + SCREEN_WIDTH / 2;',
@@ -53,6 +61,7 @@ const slides: SlideElement[][] = [
       content: 'Improving Abilities?',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
+    emptyText,
     {
       content: 'Great for PoC',
       position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
@@ -76,12 +85,17 @@ const slides: SlideElement[][] = [
   ],
   [
     {
-      content: 'AI assistants are the new calculators',
+      content: 'Conclusions',
       position: { x: 'center', y: HEADER_Y_POSITION },
+    },
+    emptyText,
+    {
+      content: 'AI assistants are the new calculators',
+      position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
     },
     {
       content: 'Adjust to the new reality',
-      position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
+      position: { x: 'center', y: TEXT_SECOND_LINE_Y_POSITION },
     },
   ],
   [
@@ -89,6 +103,7 @@ const slides: SlideElement[][] = [
       content: 'And you?',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
+    emptyText,
     {
       content: 'http://localhost:3000/static/images/poll2.png',
       position: { x: 'center', y: 300 },
@@ -100,6 +115,7 @@ const slides: SlideElement[][] = [
       content: 'Chatbots & Conversational AI',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
+    emptyText,
     {
       content: 'ChatGPT',
       position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
@@ -114,6 +130,7 @@ const slides: SlideElement[][] = [
       content: 'Code Autocompletion',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
+    emptyText,
     {
       content: 'Copilot',
       position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
@@ -124,12 +141,13 @@ const slides: SlideElement[][] = [
       content: 'Code Quality and Refactoring',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
+    emptyText,
     {
       content: 'Copilot',
       position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
     },
     {
-      content: 'Sonarcube',
+      content: 'Sonarqube',
       position: { x: 'center', y: TEXT_SECOND_LINE_Y_POSITION },
     },
   ],
@@ -138,6 +156,7 @@ const slides: SlideElement[][] = [
       content: 'Testing and Debugging',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
+    emptyText,
     {
       content: 'Codium AI',
       position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
@@ -148,6 +167,7 @@ const slides: SlideElement[][] = [
       content: 'I want you for AI Army',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
+    emptyText,
     {
       content: 'http://localhost:3000/static/images/chatgpt_percentage.png',
       position: { x: 300, y: 300 },
@@ -164,6 +184,7 @@ const slides: SlideElement[][] = [
       content: 'BUT?',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
+    emptyText,
     {
       content: 'http://localhost:3000/static/images/poll4.png',
       position: { x: 'center', y: 300 },

@@ -37,7 +37,7 @@ export const drawImage = (
     ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
     ctx.globalAlpha = 1;
   } else {
-    img.onload = function () {
+    img.onload = function (): void {
       const scale: number = Math.min(600 / img.width, 600 / img.height);
       const imgWidth: number = img.width * scale;
       const imgHeight: number = img.height * scale;
@@ -53,7 +53,7 @@ export const drawImage = (
       ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
       ctx.globalAlpha = 1;
     };
-    img.onerror = function () {
+    img.onerror = function (): void {
       console.error('Failed to load image at ' + content);
     };
   }
@@ -137,7 +137,9 @@ export const drawBillboards = (
 
       if (itemIndex === 0) {
         ctx.fillStyle = '#3ad4a7';
-        ctx.font = state.isBackgroundVisible ? '35px PressStart2P' : '35px Arial';
+        ctx.font = state.isBackgroundVisible
+          ? '35px PressStart2P'
+          : '35px Arial';
         ctx.fillText(content, x, y);
       } else {
         if (itemIndex < visibleLines[index]) {
