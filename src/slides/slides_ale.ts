@@ -150,23 +150,23 @@ const slides: SlideElement[][] = [
     },
     {
       content: 'http://localhost:3000/static/images/chatgpt_percentage.png',
-      position: { x: 0, y: 300 },
+      position: { x: 300, y: 300 },
       opacity: 0,
     },
     {
       content: 'http://localhost:3000/static/images/poll3.png',
-      position: { x: 500, y: 500 },
+      position: { x: 800, y: 450 },
       opacity: 0,
     },
   ],
   [
     {
       content: 'BUT?',
-      position: { x: 100, y: HEADER_Y_POSITION },
+      position: { x: 'center', y: HEADER_Y_POSITION },
     },
     {
       content: 'http://localhost:3000/static/images/poll4.png',
-      position: { x: 500, y: 500 },
+      position: { x: 'center', y: 300 },
       opacity: 0,
     },
   ],

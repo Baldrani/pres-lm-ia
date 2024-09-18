@@ -126,9 +126,8 @@ export const drawBillboards = (
       //@ts-expect-error NOT A DESCRIPTION
       const { y = 0 } = position;
 
-      if (x === 'center') {
-        x = textX - scrollOffset - ctx.measureText(content).width / 2;
-      } else if (x === undefined) {
+      // TODO X is changed
+      if (x === 'center' || x == null) {
         x = textX - scrollOffset - ctx.measureText(content).width / 2;
       } else {
         x = x + textX - screenWidth / 2 - scrollOffset;
@@ -166,7 +165,6 @@ export const drawBillboards = (
           } else {
             ctx.fillStyle = '#fff';
             ctx.font = '25px Exo2';
-            ctx.fillStyle = `rgba(0, 0, 0, ${item?.opacity || 1})`;
             ctx.fillText(content, x, y);
           }
         }
