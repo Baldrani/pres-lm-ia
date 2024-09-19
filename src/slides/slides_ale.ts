@@ -90,16 +90,20 @@ const slides: SlideElement[][] = [
     },
     emptyText,
     {
-      content: 'debug',
+      content: 'Explain weird syntax',
       position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
     },
     {
-      content: 'add/modify features',
+      content: 'Debug',
       position: { x: 'center', y: TEXT_SECOND_LINE_Y_POSITION },
     },
     {
-      content: 'RIP',
+      content: 'Add/Modify features',
       position: { x: 'center', y: TEXT_THIRD_LINE_Y_POSITION },
+    },
+    {
+      content: 'RIP',
+      position: { x: 'center', y: TEXT_FIFTH_LINE_Y_POSITION },
     },
   ],
   [
@@ -119,7 +123,7 @@ const slides: SlideElement[][] = [
   ],
   [
     {
-      content: 'ChatGPT usage between IT professionals',
+      content: 'Chart time',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
     emptyText,
@@ -131,31 +135,31 @@ const slides: SlideElement[][] = [
   ],
   [
     {
-      content: 'And you?',
+      content: 'How...',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
     emptyText,
     {
       content: 'http://localhost:3000/static/images/poll2.png',
-      position: { x: 'center', y: 300 },
+      position: { x: 300, y: 300 },
       opacity: 0,
     },
   ],
   [
     {
-      content: 'I want you for AI Army',
+      content: '... many ...',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
     emptyText,
     {
       content: 'http://localhost:3000/static/images/poll3.png',
-      position: { x: 800, y: 450 },
+      position: { x: 400, y: 300 },
       opacity: 0,
     },
   ],
   [
     {
-      content: 'BUT?',
+      content: '... Rs in strawberries?',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
     emptyText,
