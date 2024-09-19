@@ -1,6 +1,6 @@
 import slides from './slides/index';
 import { setupCanvas } from './canvas';
-import { createPlayer } from './player';
+import { createPlayer, updateBullets } from './player';
 import { drawPlayer, drawBillboards, clearCanvas } from './drawing';
 import { setupEventHandlers, State } from './events';
 
@@ -100,14 +100,22 @@ function drawBackground(ctx: CanvasRenderingContext2D, player): void {
   ctx.drawImage(backgroundImage, backgroundX - width, 0, width, height);
 }
 
+const drawBullets = (ctx: CanvasRenderingContext2D, player: Player): void => {
+  player.bullets.forEach((bullet) => {
+    ctx.fillStyle = 'red';
+    ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
+  });
+};
+
 export const gameLoop = (): void => {
   clearCanvas(ctx, SCREEN_WIDTH, SCREEN_HEIGHT);
 
   drawBackground(ctx, player);
   drawBillboards(ctx, scrollOffset, SCREEN_WIDTH, visibleLines, state);
   drawPlayer(ctx, player);
+  drawBullets(ctx, player);
   updatePlayerPosition();
-
+  updateBullets(player);
   requestAnimationFrame(gameLoop);
 };
 

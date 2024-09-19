@@ -1,4 +1,4 @@
-import { Player } from './player';
+import { fireBullet, Player } from './player';
 import slides from './slides/index';
 
 export interface State {
@@ -39,6 +39,9 @@ export const setupEventHandlers = (
       }
     } else if (e.key === 's' || e.key === 'S') {
       state.isBackgroundVisible = !state.isBackgroundVisible;
+    }
+    if (e.key === 'f' || e.key === 'F') {
+      fireBullet(player);
     }
   };
 

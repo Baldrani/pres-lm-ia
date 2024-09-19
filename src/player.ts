@@ -1,3 +1,5 @@
+import { Bullet } from './types';
+
 // src/player.ts
 export interface Player {
   x: number;
@@ -15,6 +17,7 @@ export interface Player {
   isVisible: boolean;
   moving: boolean;
   jumping: boolean;
+  bullets: Bullet[];
 }
 
 export const playerImages: { [key: string]: HTMLImageElement } = {
@@ -55,4 +58,30 @@ export const createPlayer = (
   isVisible: false,
   moving: false,
   jumping: false,
+  bullets: [],
 });
+
+export const fireBullet = (player: Player): void => {
+  const bulletSpeed = 10;
+  const bullet: Bullet = {
+    x: player.x + player.width / 2,
+    y: player.y + player.height / 2,
+    dx: player.direction === 'right' ? bulletSpeed : -bulletSpeed,
+    dy: 0,
+    width: 10,
+    height: 5,
+  };
+  player.bullets.push(bullet);
+};
+
+export const updateBullets = (player: Player): void => {
+  player.bullets.forEach((bullet, index) => {
+    bullet.x += bullet.dx;
+    bullet.y += bullet.dy;
+
+    // Remove bullets that go off-screen
+    if (bullet.x < 0 || bullet.x > 800) {
+      player.bullets.splice(index, 1);
+    }
+  });
+};
