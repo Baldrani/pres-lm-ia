@@ -85,6 +85,25 @@ const slides: SlideElement[][] = [
   ],
   [
     {
+      content: 'GPS Radar',
+      position: { x: 'center', y: HEADER_Y_POSITION },
+    },
+    emptyText,
+    {
+      content: 'debug',
+      position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
+    },
+    {
+      content: 'add/modify features',
+      position: { x: 'center', y: TEXT_SECOND_LINE_Y_POSITION },
+    },
+    {
+      content: 'RIP',
+      position: { x: 'center', y: TEXT_THIRD_LINE_Y_POSITION },
+    },
+  ],
+  [
+    {
       content: 'Conclusions',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },

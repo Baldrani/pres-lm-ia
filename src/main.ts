@@ -1,3 +1,3 @@
-import { gameLoop } from './drawBilboard';
+import { gameLoop } from './drawBillboard';
 
 gameLoop();
