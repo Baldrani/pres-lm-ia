@@ -38,28 +38,20 @@ Once the page has loaded, you can start interacting with the presentation:
 To run the presentation locally, follow these steps:
 
 1. Install the necessary dependencies:
-   \`\`\`bash
-   npm install
-   \`\`\`
+   `bash npm install`
 
 2. Build the project:
-   \`\`\`bash
-   npm run build
-   \`\`\`
+   `bash npm run build`
 
 3. Start the presentation:
-   \`\`\`bash
-   npm run start
-   \`\`\`
+   `bash npm run start`
 
 ## How to Develop
 
 For development purposes, you can use the following commands:
 
 - Automatically rebuild on changes:
-  \`\`\`bash
-  npm run build:watch
-  \`\`\`
+   `bash npm run build:watch`
 
 ## Other Useful Links
 
