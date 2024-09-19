@@ -3,6 +3,7 @@ import { setupCanvas } from './canvas';
 import { createPlayer } from './player';
 import { drawPlayer, drawBillboards, clearCanvas } from './drawing';
 import { setupEventHandlers, State } from './events';
+import { updateBullet } from './bullet';
 
 const { ctx, SCREEN_WIDTH, SCREEN_HEIGHT } = setupCanvas();
 const player = createPlayer(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -107,6 +108,18 @@ export const gameLoop = (): void => {
   drawBillboards(ctx, scrollOffset, SCREEN_WIDTH, visibleLines, state);
   drawPlayer(ctx, player);
   updatePlayerPosition();
+
+  // Draw and update bullets
+  player.bullets.forEach((bullet, index) => {
+    ctx.fillStyle = 'red';
+    ctx.fillRect(bullet.x + 150, bullet.y + 40, 10, 10); // Draw bullet
+    updateBullet(bullet);
+
+    // Remove bullet if it goes off-screen
+    if (bullet.x < 0 || bullet.x > SCREEN_WIDTH) {
+      player.bullets.splice(index, 1);
+    }
+  });
 
   requestAnimationFrame(gameLoop);
 };

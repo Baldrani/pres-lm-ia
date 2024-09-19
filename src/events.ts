@@ -1,3 +1,4 @@
+import { createBullet } from './bullet';
 import { Player } from './player';
 import slides from './slides/index';
 
@@ -39,6 +40,10 @@ export const setupEventHandlers = (
       }
     } else if (e.key === 's' || e.key === 'S') {
       state.isBackgroundVisible = !state.isBackgroundVisible;
+    } else if (e.key === 'f' || e.key === 'F') {
+      // Add this block
+      const bullet = createBullet(player.x, player.y, player.direction);
+      player.bullets.push(bullet);
     }
   };
 
