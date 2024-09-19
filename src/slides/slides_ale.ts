@@ -112,58 +112,6 @@ const slides: SlideElement[][] = [
   ],
   [
     {
-      content: 'Chatbots & Conversational AI',
-      position: { x: 'center', y: HEADER_Y_POSITION },
-    },
-    emptyText,
-    {
-      content: 'ChatGPT',
-      position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
-    },
-    {
-      content: 'Tabnine',
-      position: { x: 'center', y: TEXT_SECOND_LINE_Y_POSITION },
-    },
-  ],
-  [
-    {
-      content: 'Code Autocompletion',
-      position: { x: 'center', y: HEADER_Y_POSITION },
-    },
-    emptyText,
-    {
-      content: 'Copilot',
-      position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
-    },
-  ],
-  [
-    {
-      content: 'Code Quality and Refactoring',
-      position: { x: 'center', y: HEADER_Y_POSITION },
-    },
-    emptyText,
-    {
-      content: 'Copilot',
-      position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
-    },
-    {
-      content: 'Sonarqube',
-      position: { x: 'center', y: TEXT_SECOND_LINE_Y_POSITION },
-    },
-  ],
-  [
-    {
-      content: 'Testing and Debugging',
-      position: { x: 'center', y: HEADER_Y_POSITION },
-    },
-    emptyText,
-    {
-      content: 'Codium AI',
-      position: { x: 'center', y: TEXT_FIRST_LINE_Y_POSITION },
-    },
-  ],
-  [
-    {
       content: 'I want you for AI Army',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
