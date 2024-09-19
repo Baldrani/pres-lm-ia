@@ -119,6 +119,18 @@ const slides: SlideElement[][] = [
   ],
   [
     {
+      content: 'ChatGPT usage between IT professionals',
+      position: { x: 'center', y: HEADER_Y_POSITION },
+    },
+    emptyText,
+    {
+      content: 'http://localhost:3000/static/images/chatgpt_percentage.png',
+      position: { x: 300, y: 300 },
+      opacity: 0,
+    },
+  ],
+  [
+    {
       content: 'And you?',
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
@@ -135,11 +147,6 @@ const slides: SlideElement[][] = [
       position: { x: 'center', y: HEADER_Y_POSITION },
     },
     emptyText,
-    {
-      content: 'http://localhost:3000/static/images/chatgpt_percentage.png',
-      position: { x: 300, y: 300 },
-      opacity: 0,
-    },
     {
       content: 'http://localhost:3000/static/images/poll3.png',
       position: { x: 800, y: 450 },
