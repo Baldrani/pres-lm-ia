@@ -64,14 +64,23 @@ For development purposes, you can use the following commands:
 
 ## Poll questions
 
-```
-"Have you watched Atlas the movie?" "Yes, and I loved it" "Yes, and it sucks" "No, please no spoilers" "No, I don't care about spoilers"
 
-"Which types of AI assistants are you using?" "Chatbots" "Code Autocompletion" "Code Quality" "Testing/Debugging" "DevOps" "Security"
+"Have you watched Atlas the movie?" 
 
-"How often do you use AI tools?" "Every minute of my life" "Multiple times a day" "Multiple times a month" "I despise this :hankey:"
+![Answer1](public/images/answer1.png)
 
-"Have you noticed any improvements using AI tools?" "Yes, I don’t want to know how bad I would be without it" "I grew up with them and so I have no clue" "It made me a worse developer" "I can’t code anymore without it" "I still cannot center a div"
+"Which types of AI assistants are you using?"
 
-"Has this presentation changed your mind about AI tools?" "Yes" "No" "I'm a sucker for them" "Let's go for lunch already"
-```
+![Answer2](public/images/answer2.png)
+
+"How often do you use AI tools?" "Every minute of my life" 
+
+![Answer3](public/images/answer3.png)
+
+"Have you noticed any improvements using AI tools?" 
+
+![Answer4](public/images/answer4.png)
+
+"Has this presentation changed your mind about AI tools?"
+
+![Answer5](public/images/answer5.png)
