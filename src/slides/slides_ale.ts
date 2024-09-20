@@ -120,6 +120,11 @@ const slides: SlideElement[][] = [
       content: 'Adjust to the new reality',
       position: { x: 'center', y: TEXT_SECOND_LINE_Y_POSITION },
     },
+    {
+      content: 'http://localhost:3000/static/images/calculator.png',
+      position: { x: 300, y: 500 },
+      opacity: 0,
+    },
   ],
   [
     {
